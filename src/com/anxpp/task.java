@@ -4,6 +4,7 @@ import java.io.File;
 
 public class task implements Runnable {
 	static int i = 0;
+	static String key = "";
 	@Override
 	public void run() {
 		String main = MyExecutor.getNum();
@@ -11,7 +12,7 @@ public class task implements Runnable {
 		String content = HtmlUtil.getHtml(s);
 		if(content==null)
 			return;
-		if(content.contains("亚洲色图")){
+		if(content.contains(key)){
 			System.err.println("\n" + main);
 			new File("D://site/www."+main + ".com");
 		}
